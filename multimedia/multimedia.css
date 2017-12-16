@@ -17,6 +17,31 @@ body {
 
 a { color: inherit; }
 
+.menu-music {
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 26px;
+}
+.menu-poems {
+    margin: auto;
+    position: absolute;
+    bottom:20%;
+    right: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 26px;
+}
+
 .menu-item, .menu-open-button {
     background: #EEEEEE;
     border-radius: 100%;
@@ -81,20 +106,6 @@ a { color: inherit; }
 .menu-open:checked + .menu-open-button .line-3 {
     -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
     transform: translate3d(0, 0, 0) rotate(-45deg);
-}
-
-.menu {
-    margin: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    box-sizing: border-box;
-    font-size: 26px;
 }
 
 .menu-item:hover {
