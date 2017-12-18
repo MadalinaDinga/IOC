@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Page Title</title>
+   <link rel="stylesheet" href="stil.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="bgimg-1">
+		<div id="box-1" class="box" name="box0" onclick="navigateToPage(this.id)" style="background-image: url('legume.jpg');"  ></div>
+			<div id="box-2" class="box" name="box1" onclick="navigateToPage(this.id)" style="background-image: url('fructe.jpg');"   ></div>
+			<div id="box-3" class="box" name="box2"  onclick="navigateToPage(this.id)" style="background-image: url('activitati.jpg');"  ></div>
+			<div id="box-4" class="box" name="box3"  onclick="navigateToPage(this.id)" style="background-image: url('natura.jpg');"  ></div>
+			<div id="box-5" class="box" name="box4" onclick="navigateToPage(this.id)" style="background-image: url('multimedia.jpg');" ></div>
+	</div>
+
+	<script>
+        function navigateToPage(elem) {
+            switch(elem) {
+                case "box-1":
+                    window.location.href="../legume/joc_toamna.html";
+                    break;
+                case "box-2":
+                    break;
+                case "box-3":
+                    break;
+				case "box-4":
+                    break;
+				case "box-5":
+                    window.location.href="../multimedia/multimedia.html";
+                    break;
+            }
+
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Toamna</title>
+<style>
+	#buttonStart
+	{
+		font-size:1.5em;
+		position: fixed;
+		right: 100px;
+		bottom: 100px;
+	}
+	div#cards
+	{
+		position:fixed;
+		top: 50px;
+		left: 400px;
+	}
+	div#cards img 
+	{
+		width: 200px;
+		height: 200px;
+	}
+	b#matchesB{
+		font-size:40px;
+		position:fixed;
+		bottom: 180px;
+		left: 620px; 
+	}
+	b#matches{
+	font-size:40px;
+	position:fixed;
+	bottom: 180px;
+	left: 800px; 
+	}
+</style>
+<script>
+    var clicks = 0; 
+    var firstchoice; 
+    var secondchoice; 
+
+    var match = 0; 
+    var backcard = "bej.jpg";
+
+    var images = []; 
+    images[0] = 'ardei.jpg';
+	images[1] = 'morcov.jpg';
+	images[2] = 'porumb.jpg';
+	images[3] = 'galben.jpg';
+	images[4] = 'rosu.png';
+    images[5] = 'portocaliu.png';
+  
+ 
+	
+	function newGame()
+	{
+		  clicks=0;
+		  match=0;
+		  document.images[0].src = 'ardei.jpg';
+		  document.images[1].src = 'morcov.jpg';
+		  document.images[2].src = 'porumb.jpg';
+		  document.images[3].src = 'galben.jpg';
+		  document.images[4].src = 'rosu.png';
+		  document.images[5].src = 'portocaliu.png';
+		  //document.getElementById("matches").innerHTML = 0;
+	}
+	
+    function choose(card) {
+            if (clicks == 2) {
+                return;
+            }
+            if (clicks == 0) {
+                firstchoice = card;
+                clicks = 1;
+            } else {
+                clicks = 2;
+                secondchoice = card;
+                timer = setInterval("check()", 800);
+            }
+        }
+
+    function check() {
+    clearInterval(timer); 
+    clicks = 0;
+    if (firstchoice == 0 && secondchoice == 4) {
+      //  match++;
+		document.images[firstchoice].src = "bej.jpg";
+		document.images[secondchoice].src = "bej.jpg";
+    } else {
+		if(firstchoice == 1 && secondchoice == 5){
+		//	match++;
+			document.images[firstchoice].src = "bej.jpg";
+			document.images[secondchoice].src = "bej.jpg";
+		}else{
+			if(firstchoice == 2 && secondchoice == 3){
+			//	 match++;
+				 document.images[firstchoice].src = "bej.jpg";
+				 document.images[secondchoice].src = "bej.jpg";
+			}
+		}
+        return;
+    }
+}
+
+
+</script>
+</head>
+
+<body>
+<p> Alegeti culoarea corespunzatoare fiecarei legume: </p>
+<br> 
+<div id="cards">
+    <a href="javascript:choose(0)"><img src="ardei.jpg"/></a>
+
+    <a href="javascript:choose(1)"><img src="morcov.jpg"  /></a>
+
+    <a href="javascript:choose(2)"><img src="porumb.jpg"  /></a>
+	
+	<br>
+	
+    <a href="javascript:choose(3)"><img src="galben.jpg" /></a>
+
+    <a href="javascript:choose(4)"><img src="rosu.png"  /></a>
+
+    <a href="javascript:choose(5)"><img src="portocaliu.png"  /></a>
+</div>
+
+	<button id="buttonStart" type="button" onclick="newGame()">Incepe un nou joc!</button>
+
+</body>
+
+</html>

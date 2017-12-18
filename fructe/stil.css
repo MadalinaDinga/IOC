@@ -1,0 +1,62 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+.bgimg-1{
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://thumbs.dreamstime.com/z/pumpkins-fall-leaves-1241578.jpg') ;  height: 100%;
+}
+
+.box {
+  height: 180px;
+  width: 180px;
+  border-radius: 20px;
+  position: absolute;
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+.box:hover{
+transform: rotate(45deg);
+}
+#box-1{
+  top: 0px;
+  left:600px;
+  right: 0px;
+  bottom: 0px;
+}
+#box-2{
+top: 150px;
+  left: 400px;
+  right: 50px;
+  bottom: 50px;
+
+}
+#box-3{
+top: 150px;
+  left: 800px;
+  right: 100px;
+  bottom: 100px;
+
+}
+#box-4{
+ top: 350px;
+  left: 460px;
+  right: 150px;
+  bottom: 150px;
+
+}
+#box-5{
+  top: 350px;
+  left:700px;
+  right: 200px;
+  bottom: 200px;
+
+}
