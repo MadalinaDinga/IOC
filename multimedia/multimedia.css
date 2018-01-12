@@ -13,10 +13,10 @@ body {
 }
 
 .left{
-  /*  text-align: left;*/
+  text-align: left;
 }
 .right{
-   /* text-align: right;*/
+   text-align: right;
 }
 
 @media screen and (max-width: 700px) {
@@ -54,7 +54,27 @@ a { color: inherit; }
     font-size: 26px;
 }
 
-.menu-item, .menu-open-button {
+.menu-open-button{
+    /*background: #EEEEEE;*/
+    background-image: url("../resources/multimedia/music_logo.jpg");
+    background-size: contain;
+    border-radius: 100%;
+    width: 110px;
+    height: 110px;
+    margin-left: -75px;
+    position: absolute;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 80px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform ease-out 200ms;
+    transition: -webkit-transform ease-out 200ms;
+    transition: transform ease-out 200ms;
+    transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+}
+
+.menu-item{
     background: #EEEEEE;
     border-radius: 100%;
     width: 80px;
