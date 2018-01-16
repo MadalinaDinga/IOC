@@ -1,21 +1,81 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <title>Toamna</title>
 <style>
+
+	h2 { 
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+	}
+
+	h3{ 
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 200px;
+    margin-right: 0;
+    font-weight: bold;
+	}
+	
 	#buttonStart
 	{
 		font-size:1.5em;
 		position: fixed;
-		right: 100px;
-		bottom: 100px;
+		left: 360px;
+		bottom: 10px;
+	}
+	div#divPrincipal
+	{
+		position:fixed;
+		top: 0px;
+		left: 0px;
+		
+			::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+		
+	}
+	div#povesti
+	{
+		position:fixed;
+		top: 40px;
+		left: 1000px;
 	}
 	div#cards
 	{
 		position:fixed;
-		top: 50px;
-		left: 400px;
+		top: 160px;
+		left: 150px;
+	}
+	div#povesti img 
+	{
+		width: 200px;
+		height: 180px;
+		left : 700px;
 	}
 	div#cards img 
 	{
@@ -34,6 +94,16 @@
 	bottom: 180px;
 	left: 800px; 
 	}
+	body {
+    background-image: url('https://thumbs.dreamstime.com/z/pumpkins-fall-leaves-1241578.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	background-size: cover;
+	height: 100%;
+	
+}
+
+
 </style>
 <script>
     var clicks = 0; 
@@ -85,18 +155,21 @@
     clicks = 0;
     if (firstchoice == 0 && secondchoice == 4) {
       //  match++;
-		document.images[firstchoice].src = "bej.jpg";
-		document.images[secondchoice].src = "bej.jpg";
+		document.images[firstchoice].src = "ardei_joc.jpg";
+		document.images[secondchoice].src = "ardei_joc.jpg";
+		document.getElementById('audio_playArdei').play();
     } else {
 		if(firstchoice == 1 && secondchoice == 5){
 		//	match++;
-			document.images[firstchoice].src = "bej.jpg";
-			document.images[secondchoice].src = "bej.jpg";
+			document.images[firstchoice].src = "morcov_joc.jpg";
+			document.images[secondchoice].src = "morcov_joc.jpg";
+			document.getElementById('audio_playMorcov').play();
 		}else{
 			if(firstchoice == 2 && secondchoice == 3){
 			//	 match++;
-				 document.images[firstchoice].src = "bej.jpg";
-				 document.images[secondchoice].src = "bej.jpg";
+				 document.images[firstchoice].src = "porumb_joc.png";
+				 document.images[secondchoice].src = "porumb_joc.png";
+				 document.getElementById('audio_playPorumb').play();
 			}
 		}
         return;
@@ -107,27 +180,69 @@
 </script>
 </head>
 
-<body>
-<p> Alegeti culoarea corespunzatoare fiecarei legume: </p>
+<body> 
+
 <br> 
-<div id="cards">
-    <a href="javascript:choose(0)"><img src="ardei.jpg"/></a>
+<div id = "divPrincipal" <!--style="overflow:scroll; height:900px;width: 1400px; ;overflow-y"> -->
 
-    <a href="javascript:choose(1)"><img src="morcov.jpg"  /></a>
 
-    <a href="javascript:choose(2)"><img src="porumb.jpg"  /></a>
+<h3> Alegeti culoarea corespunzatoare fiecarei legume: </h3>
+<div id="cards" style="background: black">
+    <a href="javascript:choose(0)"><img src="ardei.jpg" style="border: #00008B 4px solid;"/></a>
+
+    <a href="javascript:choose(1)"><img src="morcov.jpg" style="border: #00008B 4px solid;"  /></a>
+
+    <a href="javascript:choose(2)"><img src="porumb.jpg" style="border: #00008B 4px solid;" /></a>
 	
 	<br>
 	
-    <a href="javascript:choose(3)"><img src="galben.jpg" /></a>
+    <a href="javascript:choose(3)"><img src="galben.jpg" style="border: #00008B 4px solid;" /></a>
 
-    <a href="javascript:choose(4)"><img src="rosu.png"  /></a>
+    <a href="javascript:choose(4)"><img src="rosu.png" style="border: #00008B 4px solid;" /></a>
 
-    <a href="javascript:choose(5)"><img src="portocaliu.png"  /></a>
+    <a href="javascript:choose(5)"><img src="portocaliu.png" style="border: #00008B 4px solid;" /></a>
+	
+	
+	<button id="buttonStart" type="button" onclick="newGame()">Incepe un nou joc!</button>
 </div>
 
-	<button id="buttonStart" type="button" onclick="newGame()">Incepe un nou joc!</button>
+	
 
+<div id = "povesti">
+<h2> Povestea legumelor vesele </h2>
+<br>
+
+	<audio id="audio_playArdei">
+		<!--<source src="http://www.w3schools.com/tags/horse.ogg" type="audio/ogg" /> 
+		
+		<source src="http://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" /> -->
+		<source src="ardei_audio.mp3" type="audio/mpeg" />
+		
+	</audio>
+	
+	<audio id="audio_playMorcov">
+		<!--<source src="http://www.w3schools.com/tags/horse.ogg" type="audio/ogg" /> 
+		
+		<source src="http://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" /> -->
+		<source src="morcov_audio.mp3" type="audio/mpeg" />
+		
+	</audio>
+	
+	<audio id="audio_playPorumb">
+		<!--<source src="http://www.w3schools.com/tags/horse.ogg" type="audio/ogg" /> 
+		
+		<source src="http://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" /> -->
+		<source src="porumb_poveste.mp3" type="audio/mpeg" />
+		
+	</audio>
+
+	<img src="dovlecel1_poveste.jpg" style="border: #00008B 4px solid;" onClick="document.getElementById('audio_play').play(); return false;" />
+	<br>
+	<img src="morcov_poveste.jpg" style="border: #00008B 4px solid;"/>
+	<br>
+	<img src="porumb_poveste.jpg" style="border: #00008B 4px solid;"/>
+</div>
+</div>
 </body>
 
 </html>
