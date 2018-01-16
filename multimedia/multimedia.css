@@ -74,6 +74,27 @@ a { color: inherit; }
     transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
 }
 
+.menu2-open-button{
+    /*background: #EEEEEE;*/
+    background-image: url("../resources/multimedia/poems_logo.jpg");
+    background-size: contain;
+    border-radius: 100%;
+    width: 110px;
+    height: 110px;
+    margin-left: -75px;
+    position: absolute;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 80px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform ease-out 200ms;
+    transition: -webkit-transform ease-out 200ms;
+    transition: transform ease-out 200ms;
+    transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+}
+
+
 .menu-item{
     background: #EEEEEE;
     border-radius: 100%;
@@ -125,17 +146,17 @@ a { color: inherit; }
     transform: translate3d(0, 8px, 0);
 }
 
-.menu-open:checked + .menu-open-button .line-1 {
+.menu-open:checked + .menu-open-button .line-1, .menu-open:checked + .menu-open2-button .line-1 {
     -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
     transform: translate3d(0, 0, 0) rotate(45deg);
 }
 
-.menu-open:checked + .menu-open-button .line-2 {
+.menu-open:checked + .menu-open-button .line-2, .menu-open:checked + .menu-open2-button .line-1 {
     -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
     transform: translate3d(0, 0, 0) scale(0.1, 1);
 }
 
-.menu-open:checked + .menu-open-button .line-3 {
+.menu-open:checked + .menu-open-button .line-3, .menu-open:checked + .menu-open2-button .line-1 {
     -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
     transform: translate3d(0, 0, 0) rotate(-45deg);
 }
@@ -180,7 +201,7 @@ a { color: inherit; }
     transition-duration: 180ms;
 }
 
-.menu-open-button {
+.menu-open-button, .menu2-open-button {
     z-index: 2;
     -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -192,12 +213,12 @@ a { color: inherit; }
     box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
 }
 
-.menu-open-button:hover {
+.menu-open-button:hover, .menu2-open-button:hover {
     -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
     transform: scale(1.2, 1.2) translate3d(0, 0, 0);
 }
 
-.menu-open:checked + .menu-open-button {
+.menu-open:checked + .menu-open-button, .menu-open:checked + .menu2-open-button {
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
     -webkit-transition-duration: 200ms;
