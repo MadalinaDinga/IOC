@@ -23,7 +23,6 @@ var N = 1 << 0,
 	replay.onclick = function() {refresh()};
 	
 	function refresh() {
-		console.log("pl");
         window.parent.location = window.parent.location.href;
     }
 
@@ -95,7 +94,7 @@ var N = 1 << 0,
 
       imageObj.onload = function() {
         context.drawImage(imageObj, width-115, 5, 50, 60);
-		//context.setAttribute("z-index", 999);
+		//context.setAttribute("overflow-x", 'visible');
       };
 	  imageObj.src = 'prune.png';
 	  imageObj.setAttribute("position", 'absolute');
@@ -117,7 +116,7 @@ var N = 1 << 0,
     });
 
     // Explore the frontier until the tree spans the graph.
-    function run() {
+    function run() {		
         var done, k = 0;
         while (++k < 50 && !(done = exploreFrontier()));
         return done;
@@ -347,7 +346,8 @@ var N = 1 << 0,
     }
 //Changes the alert when you win the game
     function gameComplete() {
-        alert('Wow! You won! Thats pretty neat!'); 
+		var video = d.getElementById('bravo');
+		video.play();
       }
 
 
