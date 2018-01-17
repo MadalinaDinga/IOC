@@ -5,14 +5,16 @@ body, html {
     color: #777;
     position: relative;
     opacity: 1;
+
+}
+#mainNatura2{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("natura-bg.jpg") ;  height: 100%;
+    background-image: url("resources/natura2-bg.png") ;  height: 100%;
 }
-
 #main{
-    padding-top:200px;
+    padding-top:180px;
     overflow:hidden;
     animation: 4s slide-right;
     margin-left:200px;
@@ -88,10 +90,10 @@ p{
     -moz-animation-delay: 11.5s;
     animation-delay: 11.5s;
 }
-#arrowButton{
+#divImg{
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: 30px;
+    right: 50px;
 
 }
 
@@ -102,7 +104,10 @@ p{
     height:100%;
     position:absolute;
     left:0%;
-
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("resources/natura-bg.jpg") ;  height: 100%;
 }
 
 .loader {
@@ -115,7 +120,7 @@ p{
     margin: -280px 40px 54px  -34px;
 
     background: #ff0000;
-    background:url("leaf.png");
+    background:url("resources/leaf.png");
 
     -webkit-animation: loader 10s infinite  linear;
     -moz-animation: loader 10s infinite  linear;
@@ -203,3 +208,95 @@ p{
     }
 }
 
+#imgPuzlle
+{
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+
+}
+#imgPuzlle:hover
+{
+    box-shadow: 0px 0px 150px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
+td, tr {
+    margin:0;
+    border:0;
+    padding:0;
+}
+table
+{
+    padding-top:180px;
+    border-collapse:separate;
+    border-spacing:1px;
+}
+.selected {
+    transform: scale(0.9, 0.9);
+}
+#buttonAgain{
+    position: fixed;
+    bottom: 60px;
+    right: 170px;
+}
+#buttonAgain:hover
+{
+
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
+#buttonBack{
+    position: fixed;
+    bottom: 60px;
+    left: 170px;
+}
+#buttonBack:hover
+ {
+     z-index: 2;
+     -webkit-transition: all 200ms ease-in;
+     -webkit-transform: scale(1.5);
+     -ms-transition: all 200ms ease-in;
+     -ms-transform: scale(1.5);
+     -moz-transition: all 200ms ease-in;
+     -moz-transform: scale(1.5);
+     transition: all 200ms ease-in;
+     transform: scale(1.5);
+ }
+#hintImage{
+    position: fixed;
+    bottom: 230px;
+    left: 170px;
+}
+#hintImage:hover
+{
+
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
