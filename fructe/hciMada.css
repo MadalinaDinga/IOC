@@ -14,6 +14,20 @@ canvas {
 	margin-left: 75%;	
 }
 
+.video-container {
+	position: relative;
+}
+
+.videoMatura {
+	margin-top: -75px;
+	position:absolute;
+}
+
+.videoCulesulViilor {
+	margin-top: 330px;
+	position:absolute;
+}
+
 .replay {
 	width: 80px;
 	height: 80px;
