@@ -14,6 +14,14 @@
 <!--http://fontawesome.io/icons/-->
 <body>
 <div class="main-div">
+    <audio id="audio_hoverMickey">
+        <source src="voices/mickey_audio.mp4" type="audio/mpeg" />
+    </audio>
+
+    <audio id="audio_hoverMinnie">
+        <source src="voices/minnie_audio.mp4" type="audio/mpeg" />
+    </audio>
+
     <div class="left">
         <video width="420" height="340" autoplay loop>
             <source src="../resources/multimedia/winnie.mp4" type="video/mp4">
@@ -29,7 +37,7 @@
 
 
     <div class="center">
-        <nav class="menu-music">
+        <nav class="menu-music" onmouseover="songsMenuAudio()">
             <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open-songs" />
             <label class="menu-open-button" for="menu-open-songs">
                 <span class="lines line-1"></span>
@@ -67,7 +75,7 @@
             <!--<a href="https://www.youtube.com/watch?v=Ubo16HOZmUo" class="menu-item item-5"> <i class="fa fa-music"></i> </a>-->
             <!--<a href="https://www.youtube.com/watch?v=uFReGC-w8Bs" class="menu-item item-6"> <i class="fa fa-music"></i> </a>-->
         </nav>
-        <nav class="menu-poems">
+        <nav class="menu-poems" onmouseover="poemsMenuAudio()">
             <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open-poems" />
             <label class="menu2-open-button" for="menu-open-poems">
                 <span class="lines line-1"></span>
@@ -109,7 +117,7 @@
 
     <!--<div class="right">-->
     <!--<video width="420" height="340" autoplay loop>-->
-    <!--<source src="../resources/multimedia/mickey.mp4" type="video/mp4">-->
+    <!--<source src="../resources/multimedia/minnie_audio.mp4" type="video/mp4">-->
     <!--Your browser does not support HTML5 video.-->
     <!--</video>-->
     <!--</div>-->
@@ -122,6 +130,13 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+    function poemsMenuAudio(){
+        document.getElementById('audio_hoverMickey').play();
+    }
+
+    function songsMenuAudio(){
+        document.getElementById('audio_hoverMinnie').play();
+    }
     ga('create', 'UA-46156385-1', 'cssscript.com');
     ga('send', 'pageview');
 </script>
