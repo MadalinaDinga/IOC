@@ -19,7 +19,7 @@
 	h3{ 
     display: block;
     font-size: 1.5em;
-    margin-top: 0.83em;
+    margin-top: 2.83em;
     margin-bottom: 0.83em;
     margin-left: 200px;
     margin-right: 0;
@@ -28,10 +28,11 @@
 	
 	#buttonStart
 	{
-		font-size:1.5em;
 		position: fixed;
-		left: 360px;
-		bottom: 10px;
+		left: 430px;
+		bottom: 35px;
+		font-size: 60px;
+		background-color: #FFE700;
 	}
 	div#divPrincipal
 	{
@@ -76,6 +77,18 @@
 		width: 200px;
 		height: 180px;
 		left : 700px;
+	}
+	div#idDivPozaPoveste
+	{
+		position:fixed;
+		top: 360px;
+		left: 1300px;
+	}
+	div#idDivPozaPoveste img
+	{
+		left: 800px;
+		width: 100px;
+		height: 100px;
 	}
 	div#cards img 
 	{
@@ -125,14 +138,23 @@
 	
 	function newGame()
 	{
-		  clicks=0;
-		  match=0;
-		  document.images[0].src = 'ardei.jpg';
-		  document.images[1].src = 'morcov.jpg';
-		  document.images[2].src = 'porumb.jpg';
-		  document.images[3].src = 'galben.jpg';
-		  document.images[4].src = 'rosu.png';
-		  document.images[5].src = 'portocaliu.png';
+			document.getElementById('audio_playMorcovPoveste').pause();
+			document.getElementById('audio_playMorcovPoveste').currentTime = 0;
+			document.getElementById('audio_playPorumbPoveste').pause();
+			document.getElementById('audio_playPorumbPoveste').currentTime = 0;
+			document.getElementById('audio_playDovlecelPoveste').pause();
+			document.getElementById('audio_playDovlecelPoveste').currentTime = 0;
+			document.getElementById('audio_playDetaliiPoveste').pause();
+			document.getElementById('audio_playDetaliiPoveste').currentTime = 0;
+			  document.getElementById('audio_reincepereJoc').play();
+			  clicks=0;
+			  match=0;
+			  document.images[0].src = 'ardei.jpg';
+			  document.images[1].src = 'morcov.jpg';
+			  document.images[2].src = 'porumb.jpg';
+			  document.images[3].src = 'galben.jpg';
+			  document.images[4].src = 'rosu.png';
+			  document.images[5].src = 'portocaliu.png';
 		  //document.getElementById("matches").innerHTML = 0;
 	}
 	
@@ -154,7 +176,6 @@
     clearInterval(timer); 
     clicks = 0;
     if (firstchoice == 0 && secondchoice == 4) {
-      //  match++;
 		document.images[firstchoice].src = "ardei_joc.jpg";
 		document.images[secondchoice].src = "ardei_joc.jpg";
 		document.getElementById('audio_playArdei').play();
@@ -170,23 +191,89 @@
 				 document.images[firstchoice].src = "porumb_joc.png";
 				 document.images[secondchoice].src = "porumb_joc.png";
 				 document.getElementById('audio_playPorumb').play();
+			}else{
+				 if (firstchoice == 4 && secondchoice == 0) {
+					document.images[firstchoice].src = "ardei_joc.jpg";
+					document.images[secondchoice].src = "ardei_joc.jpg";
+					document.getElementById('audio_playArdei').play();
+				} else {
+					if(firstchoice == 5 && secondchoice == 1){
+						document.images[firstchoice].src = "morcov1.png";
+						document.images[secondchoice].src = "morcov1.png";
+						document.getElementById('audio_playMorcov').play();
+					}else{
+						if(firstchoice == 3 && secondchoice == 2){
+							document.images[firstchoice].src = "porumb_joc.png";
+							document.images[secondchoice].src = "porumb_joc.png";
+							document.getElementById('audio_playPorumb').play();
+						}
+						else{
+							document.getElementById('audio_playMaiIncearca').play();		
+						}
+					}
+				}
+				return;
 			}
 		}
-        return;
-    }
+	}
 }
 
+	function functieStart(){
+		document.getElementById('audio_playStart').play();
+	}
 
+	function playPorumb(){
+		document.getElementById('audio_playDetaliiPoveste').pause();
+		document.getElementById('audio_playDetaliiPoveste').currentTime = 0;
+		document.getElementById('audio_playDovlecelPoveste').pause();
+		document.getElementById('audio_playDovlecelPoveste').currentTime = 0;
+		document.getElementById('audio_playMorcovPoveste').pause();
+		document.getElementById('audio_playMorcovPoveste').currentTime = 0;
+		document.getElementById('audio_playPorumbPoveste').play();
+		
+	}
+	
+	function playMorcov(){
+		document.getElementById('audio_playDetaliiPoveste').pause();
+		document.getElementById('audio_playDetaliiPoveste').currentTime = 0;
+		document.getElementById('audio_playDovlecelPoveste').pause();
+		document.getElementById('audio_playDovlecelPoveste').currentTime = 0;
+		document.getElementById('audio_playPorumbPoveste').pause();
+		document.getElementById('audio_playPorumbPoveste').currentTime = 0;
+		document.getElementById('audio_playMorcovPoveste').play();
+		
+	}
+	
+	function playDovlecel(){
+		document.getElementById('audio_playDetaliiPoveste').pause();
+		document.getElementById('audio_playDetaliiPoveste').currentTime = 0;
+		document.getElementById('audio_playMorcovPoveste').pause();
+		document.getElementById('audio_playMorcovPoveste').currentTime = 0;
+		document.getElementById('audio_playPorumbPoveste').pause();
+		document.getElementById('audio_playPorumbPoveste').currentTime = 0;
+		document.getElementById('audio_playDovlecelPoveste').play();
+		
+	}
+	
+	function playDetaliiPoveste(){
+		document.getElementById('audio_playMorcovPoveste').pause();
+		document.getElementById('audio_playMorcovPoveste').currentTime = 0;
+		document.getElementById('audio_playPorumbPoveste').pause();
+		document.getElementById('audio_playPorumbPoveste').currentTime = 0;
+		document.getElementById('audio_playDovlecelPoveste').pause();
+		document.getElementById('audio_playDovlecelPoveste').currentTime = 0;
+		document.getElementById('audio_playDetaliiPoveste').play();
+	}
+	
 </script>
 </head>
 
-<body> 
+<body onload="functieStart()"> 
 
 <br> 
-<div id = "divPrincipal" <!--style="overflow:scroll; height:900px;width: 1400px; ;overflow-y"> -->
+<div id = "divPrincipal" >
 
-
-<h3> Alegeti culoarea corespunzatoare fiecarei legume: </h3>
+<h3> Alegeti culoarea corespunzatoare fiecarei legume </h3>
 <div id="cards" style="background: black">
     <a href="javascript:choose(0)"><img src="ardei.jpg" style="border: #00008B 4px solid;"/></a>
 
@@ -203,7 +290,7 @@
     <a href="javascript:choose(5)"><img src="portocaliu.png" style="border: #00008B 4px solid;" /></a>
 	
 	
-	<button id="buttonStart" type="button" onclick="newGame()">Incepe un nou joc!</button>
+	<button id="buttonStart" type="button" onclick="newGame()" style = "color: red" > &#8635;</button>
 </div>
 
 	
@@ -211,6 +298,14 @@
 <div id = "povesti">
 <h2> Povestea legumelor vesele </h2>
 <br>
+
+	<audio id="audio_reincepereJoc">
+		<!--<source src="http://www.w3schools.com/tags/horse.ogg" type="audio/ogg" /> 
+		
+		<source src="http://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" /> -->
+		<source src="inregistrare_reincepere_joc.mp3" type="audio/mpeg" />
+		
+	</audio>
 
 	<audio id="audio_playArdei">
 		<!--<source src="http://www.w3schools.com/tags/horse.ogg" type="audio/ogg" /> 
@@ -229,18 +324,64 @@
 	</audio>
 	
 	<audio id="audio_playPorumb">
-		<!--<source src="http://www.w3schools.com/tags/horse.ogg" type="audio/ogg" /> 
-		
-		<source src="http://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" /> -->
+	
 		<source src="porumb_poveste.mp3" type="audio/mpeg" />
 		
 	</audio>
+	
+	<audio id="audio_playMorcovPoveste">
 
-	<img src="dovlecel1_poveste.jpg" style="border: #00008B 4px solid;" onClick="document.getElementById('audio_play').play(); return false;" />
+		<source src="inregistrare_poveste_morcovel.mp3" type="audio/mpeg" />
+		
+	</audio>
+	
+	<audio id="audio_playPorumbPoveste">
+	
+		<source src="inregistrare_poveste_porumb.mp3" type="audio/mpeg" />
+		
+	</audio>
+	
+	<audio id="audio_playDovlecelPoveste">
+	
+		<source src="inregistrare_poveste_dovlecel.mp3" type="audio/mpeg" />
+		
+	</audio>
+	
+		<audio id="audio_playDetaliiPoveste">
+	
+		<source src="inregistrare_poveste.mp3" type="audio/mpeg" />
+		
+	</audio>
+	
+	</audio>
+	
+		<audio id="audio_playStart">
+	
+		<source src="inregistrare_start.mp3" type="audio/mpeg" />
+		
+	</audio>
+	
+	
+	
+		<audio id="audio_playMaiIncearca">
+	
+		<source src="audio_MaiIncearca.mp3" type="audio/mpeg" />
+		
+		</audio>
+	
+	<img src="dovlecel1_poveste.jpg" style="border: #00008B 4px solid;" 
+	onClick="playDovlecel()" />
 	<br>
-	<img src="morcov_poveste.jpg" style="border: #00008B 4px solid;"/>
+	<img src="morcov_poveste.jpg" style="border: #00008B 4px solid;"
+	onClick="playMorcov()"/>
 	<br>
-	<img src="porumb_poveste.jpg" style="border: #00008B 4px solid;"/>
+	<img src="porumb_poveste.jpg" style="border: #00008B 4px solid;"
+	onClick="playPorumb()"/>
+	
+</div>
+<div id="idDivPozaPoveste" >
+	<img src="poza_audio.png" style="border: #00008B 4px solid;"
+	onClick="playDetaliiPoveste()"/>
 </div>
 </div>
 </body>

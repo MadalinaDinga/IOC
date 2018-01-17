@@ -13,10 +13,13 @@ body {
 }
 
 .left{
-  text-align: left;
+    padding-top: 8%;
+    padding-left: 1%;
+    float: left;
 }
 .right{
-   text-align: right;
+    padding-top: 8%;
+   float: right;
 }
 
 @media screen and (max-width: 700px) {
