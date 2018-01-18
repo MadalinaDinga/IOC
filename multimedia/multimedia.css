@@ -33,9 +33,19 @@ body {
 a { color: inherit; }
 #btnBackToOptions2{
 	position:absolute !important;
-  top:7%;
-  
-	
+  top:5%;
+    left:3%;
+}
+#btnBackToOptions2:hover{
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
 }
 .menu-music {
     margin: auto;

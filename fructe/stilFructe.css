@@ -82,16 +82,54 @@ margin-left:25px;
   border:solid;
 }
 #btnBackToOptions{
-	position:absolute !important;
-  top:-43%;
-  left:-30%;
-	
+	position:fixed;
+    top:130px;
+    left:30px;
+}
+#btnBackToOptions:hover{
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(1.5);
 }
 #btnBackToOptions2{
-	position:absolute !important;
-  top:-79%;
-  left:-33%;
+  position:fixed;
+  top:130px;
+  left:30px;
 	
+}
+#btnBackToOptions2:hover{
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(1.5);
+}
+#btnBackToOptions1{
+  position:fixed;
+  top:130px;
+  left:30px;
+
+}
+#btnBackToOptions1:hover{
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(1.5);
 }
 .btnBack{
   height: 150px;
