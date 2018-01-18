@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <title>Toamna</title>
 <style>
@@ -32,7 +33,20 @@
 		left: 430px;
 		bottom: 35px;
 		font-size: 60px;
-		background-color: #FFE700;
+
+	}
+	#buttonStart:hover
+	{
+
+		z-index: 2;
+		-webkit-transition: all 200ms ease-in;
+		-webkit-transform: scale(1.5);
+		-ms-transition: all 200ms ease-in;
+		-ms-transform: scale(1.5);
+		-moz-transition: all 200ms ease-in;
+		-moz-transform: scale(1.5);
+		transition: all 200ms ease-in;
+		transform: scale(1.5);
 	}
 	div#divPrincipal
 	{
@@ -115,7 +129,24 @@
 	height: 100%;
 	
 }
+	#buttonBack{
+		position:fixed;
+		top:100px;
+		left:30px;
+	}
+	#buttonBack:hover
+	{
 
+		z-index: 2;
+		-webkit-transition: all 200ms ease-in;
+		-webkit-transform: scale(1.5);
+		-ms-transition: all 200ms ease-in;
+		-ms-transform: scale(1.5);
+		-moz-transition: all 200ms ease-in;
+		-moz-transform: scale(1.5);
+		transition: all 200ms ease-in;
+		transform: scale(1.5);
+	}
 
 </style>
 <script>
@@ -264,6 +295,9 @@
 		document.getElementById('audio_playDovlecelPoveste').currentTime = 0;
 		document.getElementById('audio_playDetaliiPoveste').play();
 	}
+	function goBack(){
+	    location.href="./../meniu/proiect.html";
+	}
 	
 </script>
 </head>
@@ -288,10 +322,14 @@
     <a href="javascript:choose(4)"><img src="rosu.png" style="border: #00008B 4px solid;" /></a>
 
     <a href="javascript:choose(5)"><img src="portocaliu.png" style="border: #00008B 4px solid;" /></a>
-	
-	
-	<button id="buttonStart" type="button" onclick="newGame()" style = "color: red" > &#8635;</button>
+
+
+	<i id="buttonStart" class="fa fa-repeat fa-5x" style="color: red" onclick="newGame()"></i>
+
 </div>
+	<div>
+		<i id="buttonBack" class="fa fa-arrow-left fa-5x" style="color: red" onclick="goBack()"></i>
+	</div>
 
 	
 

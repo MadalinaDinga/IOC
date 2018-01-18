@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Natura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stil-natura.css">
 </head>
 <div class="container">
@@ -47,11 +48,14 @@
 <div id="divImg"  onclick="navigateToPage()"   height="200"; >
     <img id="imgPuzlle" src="resources/rsz_puzzlepoza.jpg" ;/>
 </div>
+    <i id="buttonInapoi" class="fa fa-arrow-left fa-5x" style="color: red" onclick="goBackMeniu()"></i>
 </div>
 <script>
     function navigateToPage() {
             window.location.href="natura2.html";
         }
+    function goBackMeniu(){
+        location.href="./../meniu/proiect.html";    }
 </script>
 </body>
 </html>
