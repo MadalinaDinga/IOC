@@ -87,6 +87,12 @@ margin-left:25px;
   left:-30%;
 	
 }
+#btnBackToOptions2{
+	position:absolute !important;
+  top:-79%;
+  left:-33%;
+	
+}
 .btnBack{
   height: 150px;
   width: 150px;
