@@ -1,53 +1,155 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="hciMada.css">
-    <meta charset="UTF-8">
-    <title>Activitati de toamna</title>
-  </head>
 
-  <body>  
-    <script src = "hciMada.js"></script>
-	<div id="leaves">
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i>
-  <i></i> 
-</div>
+<head>
+<title>Page Title</title>
+   <link rel="stylesheet" href="stilFructe.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-	<div class="video-contailer">
-		<video class="videoMatura" width="370" autoplay loop>
-			<source src="C:\Users\Madalina Marginean\Desktop\Sem I\InteractiuneOC\IOC\resources\dragute\matura.mp4" type="video/mp4">
-		</video>
-	
-		<video class="videoCulesulViilor" width="400" controls>
-			<source src="C:\Users\Madalina Marginean\Desktop\Sem I\InteractiuneOC\IOC\resources\multimedia\songs\CulesulViilor.mp4" type="video/mp4">
-		</video>
+<body>
+	<audio id="sainvatam" src="sainvatam.mp3"></audio>
+	<audio id="sanejucam" src="sanejucam.mp3"></audio>
+	<div class=" bground ">
+		<div  id="options" class="switch options shown">
+			<button id="btnSaInvatam" type="button" onmouseover="startPlay(this.id)" onclick="show('#teaching')"></button>
+			<button id="btnSaJucam" type="button" onmouseover="startPlay(this.id)" onclick="show('#play')"></button>
+		</div>
+		
+		<div id ="teaching" class=" row switch teaching ">
+			<button id="btnBackToOptions" class="btnBack" type="button" onclick="show('#options');document.getElementById('videoFructe').pause();" ></button>
+			<video id="videoFructe" width="550"  controls >
+				<source src="fructe.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+				</video>
+		</div>
+		
+		 <div id="play" class="row switch play">
+			<div class="col-sm-3" >
+				<button class="btnBack" type="button" onclick="show('#options')" ></button>
+			</div>
+			<div class="col-sm-3" id ="imgsToMatch" >
+				<img id="imgTM3" class="fixedSize" src='para3.jpg'  draggable="true" ondragstart="drag(event)">
+				<img id="imgTM2" class="fixedSize" src='para2.jpg'  draggable="true" ondragstart="drag(event)" >
+				<img id="imgTM1" class="fixedSize" src='para1.jpg'  draggable="true" ondragstart="drag(event)" >
+			</div>
+			
+			<div id="imgTransparente" class="col-sm-3"  style="background-color:white;border-width:thin;">
+				<div id="div1" class="fixedSize" ondrop="drop(event,this.id)" ondragover="allowDrop(event)" >
+					<img  id="img1" class ="imgsWithOp" src='para1.jpg' > 
+				</div>
+				<div id="div2" class="fixedSize" ondrop="drop(event,this.id)" ondragover="allowDrop(event)" >
+					<img id="img2" class ="imgsWithOp" src='para2.jpg' >
+				</div>
+				<div id="div3"  class="fixedSize" ondrop="drop(event,this.id)" ondragover="allowDrop(event)" >
+					<img id="img3" class ="imgsWithOp" src='para3.jpg' >
+				</div>
+			</div>
+			<div class="col-sm-3" ></div>
+		</div>
 	</div>
-	
-	<button class='replayImg' onClick="window.location.reload()">
-		<img class='replay' src="https://www.pazzles.net/wordpress/wp-content/uploads/Repeat-300x270.jpg" />
-	</button>
-	
-	<video id="bravo" controls>
-		<source src="C:\Users\Madalina Marginean\Desktop\hciMada\vociMada\Bravo.mp4" type="video/mp4">
-	</video>
-	
-	<video id="sageti" autoplay>
-		<source src="C:\Users\Madalina Marginean\Desktop\hciMada\vociMada\sageti.aac" type="video/mp4">
-	</video>
 
-  </body>
+	<script>
+	
+	var ok=0;
+	var imagini=["para1.jpg","para3.jpg","para2.jpg","pruna3.jpg","pruna2.jpg","pruna1.jpg","gutuie3.jpg","gutuie1.jpg","gutuie2.jpg","strugure2.jpg","strugure1.jpg","strugure3.jpg","nuca2.jpg","nuca1.jpg","nuca3.jpg","mar3.jpg","mar1.jpg","mar2.jpg"];
+	var ident=["1","3","2","3","2","1","3","1","2","2","1","3","2","1","3","3","1","2"];
+	var poze=["para","pruna","gutuie","strugure","nuca","mar"];
+	var indicePoze=1;
+	var i=3;
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
 
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev,id) {
+		console.log("pe divul " +id );
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		console.log("data " +data);
+		if((id=="div1" && data=="imgTM1")||(id=="div2" && data=="imgTM2")||(id=="div3" && data=="imgTM3"))
+		{ 	
+			ok=ok+1;
+			ev.target.appendChild(document.getElementById(data));
+			if(id=="div1"){
+				$("#img1").css('opacity','1');
+			}
+			if(id=="div2"){
+				$("#img2").css('opacity','1');
+			}
+			if(id=="div3"){
+				$("#img3").css('opacity','1');
+			}
+		}
+		if(ok==3){
+			ok=0;
+			addImgsToMatch();
+			addImgsToTransparente();
+		}
+
+	}
+		function addImgsToMatch(){
+			var imaginea1="<img id=\"imgTM"+ident[i]+"\" src=\""+imagini[i]+"\" class=\"fixedSize\" draggable=\"true\" ondragstart=\"drag(event)\">";
+			i=i+1;
+			var imaginea2="<img id=\"imgTM"+ident[i]+"\" src=\""+imagini[i]+"\" class=\"fixedSize\" draggable=\"true\" ondragstart=\"drag(event)\">";
+			i=i+1;
+			var imaginea3="<img id=\"imgTM"+ident[i]+"\" src=\""+imagini[i]+"\" class=\"fixedSize\" draggable=\"true\" ondragstart=\"drag(event)\">";
+			i=i+1;
+			if(i==18){
+				i=0;
+				}
+			$("#imgsToMatch").append(imaginea1);
+			$("#imgsToMatch").append(imaginea2);
+			$("#imgsToMatch").append(imaginea3);
+		
+		}
+		function addImgsToTransparente(){
+			$("#imgTransparente").empty();
+			var imaginea1="<div id=\"div1\" class=\"fixedSize\" ondrop=\"drop(event,this.id)\" ondragover=\"allowDrop(event)\" ><img  id=\"img1\" class =\"imgsWithOp\" src=\""+poze[indicePoze]+"1.jpg\" > </div>";
+			var imaginea2="<div id=\"div2\" class=\"fixedSize\" ondrop=\"drop(event,this.id)\" ondragover=\"allowDrop(event)\" ><img  id=\"img2\" class =\"imgsWithOp\" src=\""+poze[indicePoze]+"2.jpg\" > </div>";
+			var imaginea3="<div id=\"div3\" class=\"fixedSize\" ondrop=\"drop(event,this.id)\" ondragover=\"allowDrop(event)\" ><img  id=\"img3\" class =\"imgsWithOp\" src=\""+poze[indicePoze]+"3.jpg\" > </div>"
+			$("#imgTransparente").append(imaginea1);
+			$("#imgTransparente").append(imaginea2);
+			$("#imgTransparente").append(imaginea3);
+			indicePoze=indicePoze+1;
+			if(indicePoze==6){
+			indicePoze=0;
+			}
+
+		}
+
+		function show(id) {
+			console.log("functia de arata formularele");
+			$(".switch").removeClass("shown");
+			console.log(id);
+			document.getElementById('sainvatam').pause();
+			document.getElementById('sainvatam').currentTime = 0;
+			if (id !== undefined) {
+				$(id).addClass("shown");
+				console.log()
+			}
+		}
+		
+		function startPlay(id){
+			switch(id){
+			case "btnSaInvatam":
+			document.getElementById('sanejucam').pause();
+			document.getElementById('sanejucam').currentTime = 0;
+			document.getElementById('sainvatam').play();
+			break;
+			case "btnSaJucam":
+			document.getElementById('sainvatam').pause();
+			document.getElementById('sainvatam').currentTime = 0;
+			document.getElementById('sanejucam').play();
+			break;
+				}
+		}
+       
+	</script>
+</body>
 </html>
