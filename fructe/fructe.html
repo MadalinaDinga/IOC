@@ -11,18 +11,21 @@
 </head>
 
 <body>
-	<audio id="sainvatam" src="sainvatam.mp3"></audio>
-	<audio id="sanejucam" src="sanejucam.mp3"></audio>
+	<audio id="sainvatam" class="audiofiles" src="haisainvatam.mp3"></audio>
+	<audio id="sanejucam" class="audiofiles" src="haisanejucam.mp3"></audio>
+	<audio id="instructiuni" class="audiofiles" src="instructiunejoc.mp3"></audio>
+	<audio id="inapoi" class="audiofiles" src="inapoi.mp3"></audio>
+	<audio id="bineaivenit" class="audiofiles" src="bineaivenit.mp3"></audio>
 	<div class=" bground ">
 		<div  id="options" class="switch options shown">
-			<i id="btnBackToOptions2" class="fa fa-arrow-left fa-5x" style="color: red" onclick="window.location.href='../meniu/proiect.html'"></i>
+			<i id="btnBackToOptions2" class="fa fa-arrow-left fa-5x" style="color: red" onmouseover="startPlay('btnBack')" onclick="window.location.href='../meniu/proiect.html'"></i>
 			<button id="btnSaInvatam" type="button" onmouseover="startPlay(this.id)" onclick="show('#teaching')"></button>
 			<button id="btnSaJucam" type="button" onmouseover="startPlay(this.id)" onclick="show('#play')"></button>
 		</div>
 		
-		<div id ="teaching" class=" row switch teaching ">
+		<div id ="teaching" class=" row switch teaching " >
 			<!--<button id="btnBackToOptions" class="btnBack" type="button" onclick="show('#options');document.getElementById('videoFructe').pause();" ></button> -->
-			<i id="btnBackToOptions" class="fa fa-arrow-left fa-5x" style="color: red" onclick="show('#options');document.getElementById('videoFructe').pause();"></i>
+			<i id="btnBackToOptions" class="fa fa-arrow-left fa-5x" style="color: red" onmouseover="startPlay('btnBack')" onclick="show('#options');document.getElementById('videoFructe').pause();"></i>
 			<video id="videoFructe" width="550"  controls >
 				<source src="fructe.mp4" type="video/mp4">
 				Your browser does not support HTML5 video.
@@ -32,7 +35,7 @@
 		 <div id="play" class="row switch play">
 			<div class="col-sm-3" >
 				<!--<button class="btnBack" type="button" onclick="show('#options')" ></button> -->
-				<i id="btnBackToOptions1" class="fa fa-arrow-left fa-5x" style="color: red" onclick="show('#options')"></i>
+				<i id="btnBackToOptions1" class="fa fa-arrow-left fa-5x" style="color: red" onmouseover="startPlay('btnBack')" onclick="show('#options')"></i>
 			</div>
 			<div class="col-sm-3" id ="imgsToMatch" >
 				<img id="imgTM3" class="fixedSize" src='para3.jpg'  draggable="true" ondragstart="drag(event)">
@@ -63,6 +66,9 @@
 	var poze=["para","pruna","gutuie","strugure","nuca","mar"];
 	var indicePoze=1;
 	var i=3;
+	$( document ).ready(function() {
+    document.getElementById('bineaivenit').play();
+		});
 	function allowDrop(ev) {
 		ev.preventDefault();
 	}
@@ -135,11 +141,15 @@
 			document.getElementById('sainvatam').currentTime = 0;
 			if (id !== undefined) {
 				$(id).addClass("shown");
+				if(id=="#play"){
+				document.getElementById('instructiuni').play();
+				}
 				console.log()
 			}
 		}
 		
 		function startPlay(id){
+		
 			switch(id){
 			case "btnSaInvatam":
 			document.getElementById('sanejucam').pause();
@@ -151,6 +161,14 @@
 			document.getElementById('sainvatam').currentTime = 0;
 			document.getElementById('sanejucam').play();
 			break;
+				case "btnBack":
+			document.getElementById('sainvatam').pause();
+			document.getElementById('sainvatam').currentTime = 0;
+			document.getElementById('sanejucam').pause();
+			document.getElementById('sanejucam').currentTime = 0;
+			document.getElementById('inapoi').play();
+			break;
+
 				}
 		}
        
