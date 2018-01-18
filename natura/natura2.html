@@ -1,6 +1,7 @@
 <html>
 <head>
     <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stil-natura.css">
     <script type="text/javascript" src="puzzle.js"></script>
@@ -30,5 +31,19 @@
     <i id="buttonAgain" class="fa fa-repeat fa-5x" style="color: red" onclick="startNewGame()"></i>
     <div id="hintImage"> <img  src="resources/rsz_puzzlepoza.jpg"/></div>
 </div>
+<audio id="audioinapoi">
+    <source src="resources/inapoi.mp3"/>
+</audio>
+<audio id="audioJoc">
+    <source src="resources/diana_joculet.aac" type="audio/aac"/>
+</audio>
+<audio id="audiobravo" class="bravo" controls>
+    <source src="resources/Bravo.mp4" type="audio/mpeg" />
+</audio>
+<script>
+    $( "#buttonBack" ).hover(function() {
+        document.getElementById('audioinapoi').play();
+    });
+</script>
 </body>
 </html>

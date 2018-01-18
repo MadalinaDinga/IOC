@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Natura</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stil-natura.css">
 </head>
-<body onload=""
+<body onload="start()">
 <div class="container">
     <div class="loader">
         <span></span>
@@ -41,7 +42,7 @@
 <div id="main" >
     <img src="resources/naturaLogo.png" height="200" ;/>
 </div>
-<span id="pTitle"> Toamna, natura trece prin mari schimbări:</span>
+<p id="pTitle"> Toamna, natura trece prin mari schimbări:</p>
 <p id="pFrunze"> Frunzele verzi de vară se transformă în frunze colorate: roșii, maro, galbene, portocalii și încep să cadă.</p>
 <p id="pZile">    Zilele încep să se scurteze și soarele stă mai puțin pe cer.</p>
 <p id="pOameni">   Oamenii își schimbă și ei hainele și încep să se îmbrace în haine mai groase.</p>
@@ -51,7 +52,23 @@
 </div>
     <i id="buttonInapoi" class="fa fa-arrow-left fa-5x" style="color: red" onclick="goBackMeniu()"></i>
 </div>
+
+<audio id="audio_playStart">
+    <source src="resources/introducere_natura.aac" type="audio/aac" />
+</audio>
+
+<audio id="audioinapoi">
+    <source src="resources/inapoi.mp3"/>
+</audio>
+
+
 <script>
+    $( "#buttonInapoi" ).hover(function() {
+        document.getElementById('audioinapoi').play();
+    });
+    function start(){
+        document.getElementById('audio_playStart').play();
+    }
     function navigateToPage() {
             window.location.href="natura2.html";
         }

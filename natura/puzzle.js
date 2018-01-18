@@ -1,5 +1,8 @@
 var selected = null;
 var pics = new Array(0);
+$( "#buttonInapoi" ).hover(function() {
+    document.getElementById('audioinapoi').play();
+});
 function goBack(){
     location.href="natura.html";
 }
@@ -7,6 +10,7 @@ function startNewGame(){
     location.reload();
 }
 function loadPuzzle() {
+    document.getElementById('audioJoc').play();
     pics = new Array(11);
     for(i=1; i<10; i++) {
         gasit = true;
@@ -53,8 +57,7 @@ function select(cellID, cell) {
     img1.setAttribute("class", "");
     selected = null;
     if (isSolved()) {
-        setInterval(alert("FELICITĂRI!"), 2000)
-
+        document.getElementById('audiobravo').play();
     }
 }
 
@@ -69,3 +72,4 @@ function isSolved() {
     }
     return true;
 }
+
