@@ -7,7 +7,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body onload="document.getElementById('bineaivenit').play();">
+	<audio id="bineaivenit" class="audiofiles" src="bineaivenit.mp3"></audio>
 	<div class="bgimg-1">
 		<div id="box-1" class="box" name="box0" onclick="navigateToPage(this.id)" style="background-image: url('legume.jpg');"  ></div>
 			<div id="box-2" class="box" name="box1" onclick="navigateToPage(this.id)" style="background-image: url('fructe.jpg');"   ></div>
