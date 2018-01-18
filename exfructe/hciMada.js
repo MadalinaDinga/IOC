@@ -1,4 +1,7 @@
 //Loads up the game
+function goBackMeniu(){
+    location.href="./../meniu/proiect.html";    }
+
 var w = window,
     d = document,
     e = d.documentElement,
@@ -386,3 +389,4 @@ var N = 1 << 0,
     }
 
     animate();
+
