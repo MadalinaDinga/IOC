@@ -12,10 +12,10 @@
 </head>
 
 <!--http://fontawesome.io/icons/-->
-<body>
+<body onload=" document.getElementById('audio_hoverMickey').play();">
 <div class="main-div">
     <audio id="audio_hoverMickey">
-        <source src="voices/mickey_audio.mp4" type="audio/mpeg" />
+        <source src="voices/descriere.mp3" type="audio/mpeg" />
     </audio>
 
     <audio id="audio_hoverMinnie">
@@ -38,7 +38,7 @@
 
 
     <div class="center">
-        <nav class="menu-music" onmouseover="songsMenuAudio()">
+        <nav class="menu-music" >
             <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open-songs" />
             <label class="menu-open-button" for="menu-open-songs">
                 <span class="lines line-1"></span>
@@ -76,7 +76,7 @@
             <!--<a href="https://www.youtube.com/watch?v=Ubo16HOZmUo" class="menu-item item-5"> <i class="fa fa-music"></i> </a>-->
             <!--<a href="https://www.youtube.com/watch?v=uFReGC-w8Bs" class="menu-item item-6"> <i class="fa fa-music"></i> </a>-->
         </nav>
-        <nav class="menu-poems" onmouseover="poemsMenuAudio()">
+        <nav class="menu-poems" >
             <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open-poems" />
             <label class="menu2-open-button" for="menu-open-poems">
                 <span class="lines line-1"></span>
