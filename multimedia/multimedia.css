@@ -31,7 +31,12 @@ body {
 }
 
 a { color: inherit; }
-
+#btnBackToOptions2{
+	position:absolute !important;
+  top:7%;
+  
+	
+}
 .menu-music {
     margin: auto;
     position: absolute;

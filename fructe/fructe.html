@@ -7,6 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -14,12 +15,14 @@
 	<audio id="sanejucam" src="sanejucam.mp3"></audio>
 	<div class=" bground ">
 		<div  id="options" class="switch options shown">
+			<i id="btnBackToOptions2" class="fa fa-arrow-left fa-5x" style="color: red" onclick="window.location.href='../meniu/proiect.html'"></i>
 			<button id="btnSaInvatam" type="button" onmouseover="startPlay(this.id)" onclick="show('#teaching')"></button>
 			<button id="btnSaJucam" type="button" onmouseover="startPlay(this.id)" onclick="show('#play')"></button>
 		</div>
 		
 		<div id ="teaching" class=" row switch teaching ">
-			<button id="btnBackToOptions" class="btnBack" type="button" onclick="show('#options');document.getElementById('videoFructe').pause();" ></button>
+			<!--<button id="btnBackToOptions" class="btnBack" type="button" onclick="show('#options');document.getElementById('videoFructe').pause();" ></button> -->
+			<i id="btnBackToOptions" class="fa fa-arrow-left fa-5x" style="color: red" onclick="show('#options');document.getElementById('videoFructe').pause();"></i>
 			<video id="videoFructe" width="550"  controls >
 				<source src="fructe.mp4" type="video/mp4">
 				Your browser does not support HTML5 video.
@@ -28,7 +31,8 @@
 		
 		 <div id="play" class="row switch play">
 			<div class="col-sm-3" >
-				<button class="btnBack" type="button" onclick="show('#options')" ></button>
+				<!--<button class="btnBack" type="button" onclick="show('#options')" ></button> -->
+				<i id="btnBackToOptions1" class="fa fa-arrow-left fa-5x" style="color: red" onclick="show('#options')"></i>
 			</div>
 			<div class="col-sm-3" id ="imgsToMatch" >
 				<img id="imgTM3" class="fixedSize" src='para3.jpg'  draggable="true" ondragstart="drag(event)">
